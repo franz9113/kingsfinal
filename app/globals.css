@@ -4,6 +4,32 @@
 @tailwind components;
 @tailwind utilities;
 
+/* modal */
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%;
+}
+.modal-open {
+  pointer-events: none;
+}
+
 /* navbar */
 .navbar {
   position: fixed;
@@ -71,9 +97,9 @@ body {
   .max-container {
     @apply mx-auto;
   }
-.padding-component {
-  @apply py-8 px-8 md:px-20 xl:px-40;
-}
+  .padding-component {
+    @apply py-8 px-8 md:px-20 xl:px-40;
+  }
   /* .padding-container {
     @apply px-6 lg:px-20 3xl:px-0;
   } */
@@ -208,4 +234,13 @@ body {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.remove-arrow::-webkit-inner-spin-button,
+.remove-arrow::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.remove-arrow {
+  -moz-appearance: textfield;
 }

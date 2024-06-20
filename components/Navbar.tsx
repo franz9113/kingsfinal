@@ -4,7 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import Button from "./Button";
 import { useEffect, useState } from "react";
-import { Bars3Icon, ChevronDownIcon, XMarkIcon } from "@heroicons/react/20/solid";
+import {
+  Bars3Icon,
+  ChevronDownIcon,
+  XMarkIcon,
+} from "@heroicons/react/20/solid";
 
 const Navbar = () => {
   const [activeLink, setActiveLink] = useState<string | null>("/");
@@ -43,27 +47,31 @@ const Navbar = () => {
 
   return (
     <nav
-    className={`flexBetween max-container padding-container relative z-50 ${
-      isScrolled
-        ? "navbar scrolled text-gray-600"
-        : "navbar text-gray-400"
-    }`}
-  >
-    <Link href="/">
-      <Image src="/assets/images/logo.png" alt="logo" width={300} height={50} />
-    </Link>
+      className={`flexBetween max-container padding-container relative z-10 ${
+        isScrolled ? "navbar scrolled text-gray-600" : "navbar text-gray-400"
+      }`}
+    >
+      <Link href="/">
+        <Image
+          src="/assets/images/logo.png"
+          alt="logo"
+          width={300}
+          height={50}
+          priority
+        />
+      </Link>
 
-    <ul className="hidden h-full gap-12 lg:flex">
-      {NAV_LINKS.map((link) => (
-        <li
-          key={link.key}
-          className={`relative ${
-            activeDropdown === link.key ? "dropdown-active" : ""
-          }`}
-          onMouseEnter={() => toggleDropdown(link.key)}
-          onMouseLeave={() => toggleDropdown(null)}
-        >
-           <Link
+      <ul className="hidden h-full gap-12 lg:flex">
+        {NAV_LINKS.map((link) => (
+          <li
+            key={link.key}
+            className={`relative ${
+              activeDropdown === link.key ? "dropdown-active" : ""
+            }`}
+            onMouseEnter={() => toggleDropdown(link.key)}
+            onMouseLeave={() => toggleDropdown(null)}
+          >
+            <Link
               href={link.href}
               className={`regular-16 flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold ${
                 isScrolled ? "text-gray-600" : "text-gray-400"
@@ -71,6 +79,15 @@ const Navbar = () => {
               onClick={() => handleLinkClick(link.href)}
             >
               {link.label}
+              {link.dropdown && (
+                <ChevronDownIcon
+                  className={`h-6 w-6 text-gray-400 transition-transform ${
+                    isDropdownOpen && activeDropdown === link.key
+                      ? "rotate-180"
+                      : ""
+                  }`}
+                />
+              )}
             </Link>
             {link.dropdown && (
               <ul
@@ -105,7 +122,7 @@ const Navbar = () => {
         />
       </div> */}
 
-<Bars3Icon
+      <Bars3Icon
         className="inline-block cursor-pointer h-8 w-8 lg:hidden"
         onClick={toggleMobileMenu}
       />
@@ -114,7 +131,13 @@ const Navbar = () => {
         <div className="fixed top-0 left-0 w-full h-full bg-white z-40 p-6">
           <div className="flexBetween items-center mb-6">
             <Link href="/">
-              <Image src="/assets/images/logo.png" alt="logo" width={300} height={50} />
+              <Image
+                src="/assets/images/logo.png"
+                alt="logo"
+                width={300}
+                height={50}
+                priority
+              />
             </Link>
             <XMarkIcon
               className="cursor-pointer h-8 w-8 text-black"

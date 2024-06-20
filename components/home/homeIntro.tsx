@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import Button from "../Button";
 
-import { ChevronRightIcon } from "@heroicons/react/20/solid";
+import { ArrowLongRightIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 
 const HomeIntro = () => {
@@ -18,7 +18,7 @@ const HomeIntro = () => {
       <Button
         type="button"
         title="more about us"
-        icon={<ChevronRightIcon className="w-6 h-6" />}
+        icon={<ArrowLongRightIcon className="w-6 h-6" />}
         variant="btn_transparent mt-4"
         href="/about"
       >

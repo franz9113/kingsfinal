@@ -1,16 +1,15 @@
-import React from 'react'
+import React from "react";
+import contactBanner from "../../public/assets/images/contact/contact-banner.png";
+import Image from "next/image";
 
 const ContactBanner = () => {
   return (
-    <section className="home-banner z-20">
-      <img
-        src="/assets/images/contact/contact-banner.png"
-        alt="Home Banner"
-        className="banner-image"
-      />
-      <div className="banner-image"></div>
+    <section className="home-banner">
+      <div className="banner-image">
+        <Image src={contactBanner} alt="Home Banner" className="banner-image" />
+      </div>
     </section>
-  )
-}
+  );
+};
 
-export default ContactBanner
+export default ContactBanner;
