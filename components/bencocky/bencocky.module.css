@@ -1,0 +1,33 @@
+.home_banner {
+  position: relative;
+}
+
+.banner_image_wrapper {
+  position: relative;
+}
+
+.small_image_wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.small_image {
+    width: 100px; /* Default size for small screens */
+    height: 100px; /* Default size for small screens */
+  }
+  
+  @media (min-width: 768px) {
+    .small_image {
+      width: 200px; /* Larger size for medium screens */
+      height: 200px; /* Larger size for medium screens */
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .small_image {
+      width: 250px; /* Largest size for large screens */
+      height: 250px; /* Largest size for large screens */
+    }
+  }
