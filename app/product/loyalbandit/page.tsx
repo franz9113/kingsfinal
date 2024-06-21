@@ -1,10 +1,11 @@
-import LoyalbanditBanner from "@/components/loyalbandit/loyalbanditBanner";
-import React from "react";
+import DiscoverMore from "@/components/DiscoverMore";
+import LoyalbanditBanner from "@/components/loyalbandit/LoyalbanditBanner";
 
 const LoyalbanditPage = () => {
   return (
     <>
       <LoyalbanditBanner />
+      <DiscoverMore />
     </>
   );
 };

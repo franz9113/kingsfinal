@@ -1,7 +1,9 @@
 import Hero from "@/components/Hero";
-import HomeBanner from "@/components/home/homeBanner";
-import HomeIntro from "@/components/home/homeIntro";
-import Image from "next/image";
+
+import HomeBanner from "@/components/home/HomeBanner";
+import HomeBrands from "@/components/home/HomeBrands";
+import HomeIntro from "@/components/home/HomeIntro";
+import HomeProducts from "@/components/home/HomeProducts";
 
 export default function Home() {
   return (
@@ -9,6 +11,8 @@ export default function Home() {
       {/* <Hero /> */}
       <HomeBanner />
       <HomeIntro />
+      <HomeProducts />
+      <HomeBrands />
     </>
   );
 }

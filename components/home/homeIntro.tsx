@@ -7,7 +7,7 @@ import Link from "next/link";
 const HomeIntro = () => {
   return (
     <section className="padding-component bg-black text-white">
-      <p className="max-w-2xl">
+      <p className="regular-16 max-w-2xl">
         Welcome to Abdawn Limited. We are a new force in the world of premium
         spirits, driven by a passion for craftsmanship and a commitment to
         delivering exceptional experiences. Although we are a startup, our
@@ -21,9 +21,7 @@ const HomeIntro = () => {
         icon={<ArrowLongRightIcon className="w-6 h-6" />}
         variant="btn_transparent mt-4"
         href="/about"
-      >
-
-      </Button>
+      />
     </section>
   );
 };

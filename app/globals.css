@@ -71,6 +71,32 @@ body {
   font-family: Inter;
 }
 
+/* Carousel CSS */
+.embla {
+  position: relative;
+  overflow: hidden;
+}
+
+.embla__viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.embla__container {
+  display: flex;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
 @layer utilities {
   .btn_white {
     @apply border-white bg-white px-8 py-3 text-green-50;
@@ -165,7 +191,7 @@ body {
   }
 
   .bold-64 {
-    @apply text-[64px] font-[700] leading-[120%];
+    @apply text-[64px] font-[700] leading-[120%] uppercase;
   }
 
   .bold-52 {
@@ -173,7 +199,7 @@ body {
   }
 
   .bold-40 {
-    @apply text-[40px] font-[700] leading-[120%];
+    @apply text-[40px] font-[700] leading-[120%] uppercase;
   }
 
   .bold-32 {
@@ -190,21 +216,6 @@ body {
 
   .bold-16 {
     @apply text-[16px] font-[700];
-  }
-
-  /* Hero */
-  .hero-map {
-    @apply absolute right-0 top-0 h-screen w-screen bg-pattern-2 bg-cover bg-center md:-right-28 xl:-top-60;
-  }
-
-  /* Camp */
-  .camp-quote {
-    @apply absolute -right-6 bottom-4 w-[140px] lg:bottom-10 xl:-right-8 xl:w-[186px] 3xl:right-0;
-  }
-
-  /* Feature */
-  .feature-phone {
-    @apply absolute top-[13%] z-10 hidden max-w-[1500px] rotate-[15deg] md:-left-16 lg:flex  3xl:left-20;
   }
 
   /* Get App */
@@ -244,3 +255,12 @@ body {
 .remove-arrow {
   -moz-appearance: textfield;
 }
+
+.bottle-container {
+  height: 300px;
+  width: 150px;
+  flex: auto;
+  flex-direction: column;
+  margin: auto;
+}
+

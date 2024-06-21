@@ -6,18 +6,18 @@ type ButtonProps = {
   title: string;
   icon?: React.ReactNode;
   variant: string;
-  full?: boolean;
+  // full?: boolean;
   href?: string;
 };
 
-const Button = ({ type, title, icon, variant, full, href }: ButtonProps) => {
+const Button = ({ type, title, icon, variant, href }: ButtonProps) => {
   return (
     <button
-      className={`flexCenter gap-3 border border-[#d8b476] ${variant} ${full && 'w-full'}`}
+      className={`flexCenter gap-3 border border-[#d8b476] ${variant}`}
       type={type}
     >
       {href ? (
-        <Link href={href} className="flexCenter gap-3 w-full">
+        <Link href={href} className="flexCenter gap-3">
             <label className="uppercase bold-16 whitespace-nowrap cursor-pointer">
               {title}
             </label>

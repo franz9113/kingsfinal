@@ -1,8 +1,8 @@
-import React from 'react'
-import bencockyBanner from "../../public/assets/images/bencocky/ben-cocky-banner.png"
-import bencockyLogo from "../../public/assets/images/bencocky/ben-cocky-logo.png"
-import Image from 'next/image'
-import styles from "./bencocky.module.css"
+import React from "react";
+import bencockyBanner from "../../public/assets/images/bencocky/ben-cocky-banner.png";
+import bencockyLogo from "../../public/assets/images/bencocky/ben-cocky-logo.png";
+import Image from "next/image";
+import styles from "./Bencocky.module.css";
 
 const BencockyBanner = () => {
   return (
@@ -13,16 +13,16 @@ const BencockyBanner = () => {
           alt="Home Banner"
           className="banner-image"
         />
-        <div className={styles.small_image_wrapper}>
+        {/* <div className={styles.small_image_wrapper}>
           <Image
             src={bencockyLogo}
             alt="Small Image"
             className={styles.small_image}
           />
-        </div>
+        </div> */}
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default BencockyBanner
+export default BencockyBanner;
