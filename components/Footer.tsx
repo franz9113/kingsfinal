@@ -2,9 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 
-import benCockyIcon from "../public/assets/icons/ben_cocky_icon.ico";
-import loyalBanditIcon from "../public/assets/icons/loyal_bandit_icon.ico";
-import limVodkaIcon from "../public/assets/icons/lim_vodka_icon.ico";
+import benCockyIcon from "@/public/assets/icons/ben_cocky_icon.ico";
+import loyalBanditIcon from "@/public/assets/icons/loyal_bandit_icon.ico";
+import limVodkaIcon from "@/public/assets/icons/lim_vodka_icon.ico";
+import logo from "@/public/assets/images/logo.png";
 
 const Footer = () => {
   return (
@@ -47,35 +48,35 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image
-              src={benCockyIcon}
-              alt="Image Icon"
-              className="h-8 w-8"
-            />
+            <Image src={benCockyIcon} alt="Image Icon" className="h-8 w-8" />
           </Link>
           <Link
             href="https://www.facebook.com/profile.php?id=61560447602183"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image
-              src={loyalBanditIcon}
-              alt="Image Icon"
-              className="h-8 w-8"
-            />
+            <Image src={loyalBanditIcon} alt="Image Icon" className="h-8 w-8" />
           </Link>
           <Link
             href="https://www.facebook.com/profile.php?id=61560549747719"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image
-              src={limVodkaIcon}
-              alt="Image Icon"
-              className="h-8 w-8"
-            />
+            <Image src={limVodkaIcon} alt="Image Icon" className="h-8 w-8" />
           </Link>
         </div>
+      </div>
+      {/* end grid */}
+      <div className="grid md:grid-cols-3 grid-cols-1 gap-8">
+        <div></div>
+        <div className="px-8">
+          <Image src={logo} alt="" />
+        </div>
+        <p className="flex flex-col regular-12 md:text-right text-center">
+          Please do not share alcoholic beverages with anyone under the legal
+          purchase age. Drink responsibly and consume in moderation.
+          <span className="pt-4">&copy; Abdawn Limited 2024</span>
+        </p>
       </div>
     </footer>
   );
