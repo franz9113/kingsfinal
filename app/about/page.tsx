@@ -1,9 +1,13 @@
-import React from 'react'
+import About from "@/components/about/About";
+import AboutPortfolio from "@/components/about/AboutPortfolio";
 
 const AboutPage = () => {
   return (
-    <div>AboutPage</div>
-  )
-}
+    <>
+      <About />
+      {/* <AboutPortfolio /> */}
+    </>
+  );
+};
 
-export default AboutPage
+export default AboutPage;

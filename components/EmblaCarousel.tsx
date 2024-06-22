@@ -19,8 +19,9 @@ const EmblaCarousel: React.FC = () => {
       setSlides([
         <div key="slide1" className="embla__slide">
           <div className="embla__slide__inner">
-            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
-              <div className="flex flex-col">
+            {/* 1st slide */}
+            <div className="grid lg:grid-cols-3 grid-cols-1 gap-8">
+              <div className="md:order-1 order-3 flex flex-col">
                 <h2 className="bold-32 uppercase text-white">ben cocky</h2>
                 <p className="regular-16 text-white">
                   Blending the bold flavors of French brandy with the tropical
@@ -29,15 +30,17 @@ const EmblaCarousel: React.FC = () => {
                   adventure, transporting you to sun-drenched beaches and
                   vibrant island life with every sip.
                 </p>
-                <Button
-                  type="button"
-                  title="discover"
-                  icon={<ArrowLongRightIcon className="w-6 h-6" />}
-                  variant="btn_transparent mt-4"
-                  href="/product/bencocky"
-                />
+                <div>
+                  <Button
+                    type="button"
+                    title="discover"
+                    icon={<ArrowLongRightIcon className="w-6 h-6" />}
+                    variant="btn_transparent mt-4"
+                    href="/product/bencocky"
+                  />
+                </div>
               </div>
-              <div className="bottle-container">
+              <div className="md:order-2 order-1 bottle-container">
                 <Image src={benCockyIMG} alt="" />
               </div>
               {/* 3rd grid */}
@@ -63,11 +66,12 @@ const EmblaCarousel: React.FC = () => {
               </div>
             </div>
           </div>
+          {/* 2nd slide */}
         </div>,
         <div key="slide2" className="embla__slide">
           <div className="embla__slide__inner">
-            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
-              <div className="flex flex-col">
+            <div className="grid lg:grid-cols-3 grid-cols-1 gap-8">
+              <div className="md:order-1 order-3 flex flex-col">
                 <h2 className="bold-32 uppercase text-white">lim vodka</h2>
                 <p className="regular-16 text-white">
                   Crafted in the heart of France, Lim Vodka is a testament to
@@ -77,15 +81,17 @@ const EmblaCarousel: React.FC = () => {
                   the foundation for a signature cocktail, Lim Vodka promises to
                   elevate any occasion.
                 </p>
-                <Button
-                  type="button"
-                  title="discover"
-                  icon={<ArrowLongRightIcon className="w-6 h-6" />}
-                  variant="btn_transparent mt-4"
-                  href="/product/limvodka"
-                />
+                <div>
+                  <Button
+                    type="button"
+                    title="discover"
+                    icon={<ArrowLongRightIcon className="w-6 h-6" />}
+                    variant="btn_transparent mt-4"
+                    href="/product/limvodka"
+                  />
+                </div>
               </div>
-              <div className="bottle-container">
+              <div className="md:order-2 order-1 bottle-container">
                 <Image src={limVodkaIMG} alt="" />
               </div>
               {/* 3rd grid */}
@@ -111,12 +117,13 @@ const EmblaCarousel: React.FC = () => {
               </div>
             </div>
           </div>
+          {/* 3rd slide */}
         </div>,
         <div key="slide3" className="embla__slide">
           <div className="embla__slide__inner">
-            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
+            <div className="grid lg:grid-cols-3 grid-cols-1 gap-8">
               {/* 1st grid */}
-              <div className="flex flex-col">
+              <div className="md:order-1 order-3 flex flex-col">
                 <h2 className="bold-32 uppercase text-white">loyal bandit</h2>
                 <p className="regular-16 text-white">
                   Loyal Bandit is a small-batch bourbon whiskey that embodies
@@ -125,16 +132,18 @@ const EmblaCarousel: React.FC = () => {
                   flavor profile that is sure to impress even the most
                   discerning whiskey connoisseurs.
                 </p>
-                <Button
-                  type="button"
-                  title="discover"
-                  icon={<ArrowLongRightIcon className="w-6 h-6" />}
-                  variant="btn_transparent mt-4"
-                  href="/product/loyalbandit"
-                />
+                <div>
+                  <Button
+                    type="button"
+                    title="discover"
+                    icon={<ArrowLongRightIcon className="w-6 h-6" />}
+                    variant="btn_transparent mt-4"
+                    href="/product/loyalbandit"
+                  />
+                </div>
               </div>
               {/* 2nd grid */}
-              <div className="bottle-container">
+              <div className="md:order-2 order-1 bottle-container">
                 <Image src={loyalBanditIMG} alt="" />
               </div>
               {/* 3rd grid */}
@@ -160,6 +169,7 @@ const EmblaCarousel: React.FC = () => {
               </div>
             </div>
           </div>
+          {/* end slide */}
         </div>,
       ]);
     }

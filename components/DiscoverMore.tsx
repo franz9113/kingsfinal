@@ -54,31 +54,32 @@ const DiscoverMore = () => {
 
   return (
     <div
-      className="padding-component"
       style={{
         backgroundColor,
         color: textColor,
         fontWeight: "bold",
       }}
     >
-      <h1 className="bold-64 text-center">Discover more</h1>
-      <div className="grid md:grid-cols-2 grid-cols-1 gap-8 mt-12">
-        <div className="flex flex-col">
-          <div className="bottle-container">
-            {image1 && <img src={image1.src} alt="Bottle 1" />}
+      <div className="padding-component max-container">
+        <h1 className="md:bold-64 bold-40 text-center">Discover more</h1>
+        <div className="grid md:grid-cols-2 grid-cols-1 gap-8 mt-12">
+          <div className="flex flex-col">
+            <div className="bottle-container">
+              {image1 && <img src={image1.src} alt="Bottle 1" />}
+            </div>
+            <p className="bold-32 text-center mt-2 uppercase">
+              <Link href={link2}>{text1}</Link>
+            </p>
           </div>
-          <p className="bold-32 text-center mt-2 uppercase">
-            <Link href={link2}>{text1}</Link>
-          </p>
-        </div>
-        <div className="flex flex-col">
-          <div className="bottle-container">
-            {image2 && <img src={image2.src} alt="Bottle 2" />}
-          </div>
+          <div className="flex flex-col">
+            <div className="bottle-container">
+              {image2 && <img src={image2.src} alt="Bottle 2" />}
+            </div>
 
-          <p className="bold-32 text-center mt-2 uppercase">
-            <Link href={link2}>{text2}</Link>
-          </p>
+            <p className="bold-32 text-center mt-2 uppercase">
+              <Link href={link2}>{text2}</Link>
+            </p>
+          </div>
         </div>
       </div>
     </div>

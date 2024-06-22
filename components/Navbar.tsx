@@ -10,6 +10,8 @@ import {
   XMarkIcon,
 } from "@heroicons/react/20/solid";
 
+// import logo from "@/public/assets/images/logo.png"
+
 const Navbar = () => {
   const [activeLink, setActiveLink] = useState<string | null>("/");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -47,7 +49,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`flexBetween max-container padding-container relative z-10 ${
+      className={`flexBetween padding-container relative z-10 ${
         isScrolled ? "navbar scrolled text-gray-600" : "navbar text-gray-400"
       }`}
     >
@@ -134,8 +136,8 @@ const Navbar = () => {
               <Image
                 src="/assets/images/logo.png"
                 alt="logo"
-                width={300}
-                height={50}
+                width={200}
+                height={30}
                 priority
               />
             </Link>

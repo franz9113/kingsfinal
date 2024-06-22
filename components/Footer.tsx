@@ -6,77 +6,46 @@ import benCockyIcon from "@/public/assets/icons/ben_cocky_icon.ico";
 import loyalBanditIcon from "@/public/assets/icons/loyal_bandit_icon.ico";
 import limVodkaIcon from "@/public/assets/icons/lim_vodka_icon.ico";
 import logo from "@/public/assets/images/logo.png";
+import NewsletterInput from "./NewsletterInput";
+import Icons from "./Icons";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white padding-component">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 pb-14">
-        {/* Left Column */}
-        <div className="md:order-1 order-2">
-          <p className="regular-16">
-            Welcome to Abdawn Limited We are a new force in the world of premium
-            spirits, driven by a passion for craftsmanship and a commitment to
-            delivering exceptional experiences.
+    <footer className="bg-black text-white">
+      <div className="padding-component max-container">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8 pb-14">
+          {/* Left Column */}
+
+          <div className="">
+            <Image src={logo} alt="" className="pb-4" />
+            <p className="regular-16">
+              Welcome to Abdawn Limited We are a new force in the world of
+              premium spirits, driven by a passion for craftsmanship and a
+              commitment to delivering exceptional experiences.
+            </p>
+          </div>
+
+          {/* Middle Column */}
+          <div className="flex flex-col">
+            <h3 className="text-center bold-20 mb-4 uppercase">Products</h3>
+            <NewsletterInput />
+            {/* textfield */}
+            {/* textfield end */}
+          </div>
+
+          {/* Right Column */}
+            <Icons />
+           
+        </div>
+        {/* end grid */}
+        <div className="grid lg:grid-cols-2 grid-cols-1 gap-8">
+          <div></div>
+          <p className="flex flex-col regular-12 md:text-right text-center">
+            Please do not share alcoholic beverages with anyone under the legal
+            purchase age. Drink responsibly and consume in moderation.
+            <span className="pt-4">&copy; Abdawn Limited 2024</span>
           </p>
         </div>
-
-        {/* Middle Column */}
-        <div className="md:order-2 order-3">
-          <h3 className="text-center bold-20 mb-4 uppercase">Products</h3>
-          {/* textfield */}
-          {/* textfield end */}
-        </div>
-
-        {/* Right Column */}
-        <div className="md:order-3 order-1 flex justify-end space-x-4">
-          <Link
-            href="https://www.facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaFacebook className="text-3xl" />
-          </Link>
-          <Link
-            href="https://www.instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaInstagram className="text-3xl" />
-          </Link>
-          <Link
-            href="https://www.facebook.com/profile.php?id=61560203441677"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image src={benCockyIcon} alt="Image Icon" className="h-8 w-8" />
-          </Link>
-          <Link
-            href="https://www.facebook.com/profile.php?id=61560447602183"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image src={loyalBanditIcon} alt="Image Icon" className="h-8 w-8" />
-          </Link>
-          <Link
-            href="https://www.facebook.com/profile.php?id=61560549747719"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image src={limVodkaIcon} alt="Image Icon" className="h-8 w-8" />
-          </Link>
-        </div>
-      </div>
-      {/* end grid */}
-      <div className="grid md:grid-cols-3 grid-cols-1 gap-8">
-        <div></div>
-        <div className="px-8">
-          <Image src={logo} alt="" />
-        </div>
-        <p className="flex flex-col regular-12 md:text-right text-center">
-          Please do not share alcoholic beverages with anyone under the legal
-          purchase age. Drink responsibly and consume in moderation.
-          <span className="pt-4">&copy; Abdawn Limited 2024</span>
-        </p>
       </div>
     </footer>
   );

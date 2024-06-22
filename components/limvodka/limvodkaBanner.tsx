@@ -4,7 +4,7 @@ const LimvodkaBanner = () => {
   return (
     <section className="home-banner">
       <img
-        src="/assets/images/limvodka/lim-vodka-banner.png"
+        src="/assets/images/limvodka/lim-vodka-banner2.png"
         alt="Home Banner"
         className="banner-image"
       />
