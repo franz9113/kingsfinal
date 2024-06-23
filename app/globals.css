@@ -309,9 +309,12 @@ body {
   width: 400px;
   margin: auto;
 }
-
-/* grid */
-.grid-2 {
-  
+.img_container {
+  margin: auto;
+  height: 300px;
+  width: 300px;
 }
 
+.input_contact {
+  @apply bg-transparent border border-[#D8B270] p-2 rounded placeholder-white text-white
+}

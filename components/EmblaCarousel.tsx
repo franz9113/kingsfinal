@@ -21,7 +21,7 @@ const EmblaCarousel: React.FC = () => {
           <div className="embla__slide__inner">
             {/* 1st slide */}
             <div className="grid lg:grid-cols-3 grid-cols-1 gap-8">
-              <div className="md:order-1 order-3 flex flex-col">
+              <div className="lg:order-1 order-3 flex flex-col">
                 <h2 className="bold-32 uppercase text-white">ben cocky</h2>
                 <p className="regular-16 text-white">
                   Blending the bold flavors of French brandy with the tropical
@@ -40,28 +40,30 @@ const EmblaCarousel: React.FC = () => {
                   />
                 </div>
               </div>
-              <div className="md:order-2 order-1 bottle-container">
+              <div className="lg:order-2 order-1 bottle-container">
                 <Image src={benCockyIMG} alt="" />
               </div>
               {/* 3rd grid */}
-              <div className="md:order-3 order-2 my-auto">
-                {/* 1st */}
-                <div className="flex items-center w-full mb-4">
-                  <div className="flex justify-center items-center w-12 h-12 border-[#D8B270] border-2 rounded-full">
-                    <p className="regular-14 text-white font-bold">40% </p>
+              <div className="lg:order-3 order-2 my-auto">
+                <div className="grid lg:grid-cols-1 md:grid-cols-2 grid-cols-1 gap-4">
+                  {/* 1st */}
+                  <div className="flex items-center w-full">
+                    <div className="flex justify-center items-center w-12 h-12 border-[#D8B270] border-2 rounded-full">
+                      <p className="regular-14 text-white font-bold">40% </p>
+                    </div>
+                    <span className="regular-16 pl-2 text-white">
+                      - Alcohol by volume
+                    </span>
                   </div>
-                  <span className="regular-16 pl-2 text-white">
-                    - Alcohol by volume
-                  </span>
-                </div>
-                {/* 2nd */}
-                <div className="flex items-center w-full">
-                  <div className="flex justify-center items-center w-12 h-12 border-[#D8B270] border-2 rounded-full">
-                    <p className="regular-14 text-white font-bold">100% </p>
+                  {/* 2nd */}
+                  <div className="flex items-center w-full">
+                    <div className="flex justify-center items-center w-12 h-12 border-[#D8B270] border-2 rounded-full">
+                      <p className="regular-14 text-white font-bold">100% </p>
+                    </div>
+                    <span className="regular-16 pl-2 text-white">
+                      - Made in France
+                    </span>
                   </div>
-                  <span className="regular-16 pl-2 text-white">
-                    - Made in France
-                  </span>
                 </div>
               </div>
             </div>
@@ -71,7 +73,7 @@ const EmblaCarousel: React.FC = () => {
         <div key="slide2" className="embla__slide">
           <div className="embla__slide__inner">
             <div className="grid lg:grid-cols-3 grid-cols-1 gap-8">
-              <div className="md:order-1 order-3 flex flex-col">
+              <div className="lg:order-1 order-3 flex flex-col">
                 <h2 className="bold-32 uppercase text-white">lim vodka</h2>
                 <p className="regular-16 text-white">
                   Crafted in the heart of France, Lim Vodka is a testament to
@@ -91,28 +93,30 @@ const EmblaCarousel: React.FC = () => {
                   />
                 </div>
               </div>
-              <div className="md:order-2 order-1 bottle-container">
+              <div className="lg:order-2 order-1 bottle-container">
                 <Image src={limVodkaIMG} alt="" />
               </div>
               {/* 3rd grid */}
-              <div className="md:order-3 order-2 my-auto">
-                {/* 1st */}
-                <div className="flex items-center w-full mb-4">
-                  <div className="flex justify-center items-center w-12 h-12 border-[#D8B270] border-2 rounded-full">
-                    <p className="regular-14 text-white font-bold">40% </p>
+              <div className="lg:order-3 order-2 my-auto">
+                <div className="grid lg:grid-cols-1 md:grid-cols-2 grid-cols-1 gap-4">
+                  {/* 1st */}
+                  <div className="flex items-center w-full">
+                    <div className="flex justify-center items-center w-12 h-12 border-[#D8B270] border-2 rounded-full">
+                      <p className="regular-14 text-white font-bold">40% </p>
+                    </div>
+                    <span className="regular-16 pl-2 text-white">
+                      - Alcohol by volume
+                    </span>
                   </div>
-                  <span className="regular-16 pl-2 text-white">
-                    - Alcohol by volume
-                  </span>
-                </div>
-                {/* 2nd */}
-                <div className="flex items-center w-full">
-                  <div className="flex justify-center items-center w-12 h-12 border-[#D8B270] border-2 rounded-full">
-                    <p className="regular-14 text-white font-bold">100% </p>
+                  {/* 2nd */}
+                  <div className="flex items-center w-full">
+                    <div className="flex justify-center items-center w-12 h-12 border-[#D8B270] border-2 rounded-full">
+                      <p className="regular-14 text-white font-bold">100% </p>
+                    </div>
+                    <span className="regular-16 pl-2 text-white">
+                      - Made in France
+                    </span>
                   </div>
-                  <span className="regular-16 pl-2 text-white">
-                    - Made in France
-                  </span>
                 </div>
               </div>
             </div>
@@ -123,7 +127,7 @@ const EmblaCarousel: React.FC = () => {
           <div className="embla__slide__inner">
             <div className="grid lg:grid-cols-3 grid-cols-1 gap-8">
               {/* 1st grid */}
-              <div className="md:order-1 order-3 flex flex-col">
+              <div className="lg:order-1 order-3 flex flex-col">
                 <h2 className="bold-32 uppercase text-white">loyal bandit</h2>
                 <p className="regular-16 text-white">
                   Loyal Bandit is a small-batch bourbon whiskey that embodies
@@ -143,28 +147,30 @@ const EmblaCarousel: React.FC = () => {
                 </div>
               </div>
               {/* 2nd grid */}
-              <div className="md:order-2 order-1 bottle-container">
+              <div className="lg:order-2 order-1 bottle-container">
                 <Image src={loyalBanditIMG} alt="" />
               </div>
               {/* 3rd grid */}
-              <div className="md:order-3 order-2 my-auto">
-                {/* 1st */}
-                <div className="flex items-center w-full mb-4">
-                  <div className="flex justify-center items-center w-12 h-12 border-[#D8B270] border-2 rounded-full">
-                    <p className="regular-14 text-white font-bold">40% </p>
+              <div className="lg:order-3 order-2 my-auto">
+                <div className="grid lg:grid-cols-1 md:grid-cols-2 grid-cols-1 gap-4">
+                  {/* 1st */}
+                  <div className="flex items-center w-full">
+                    <div className="flex justify-center items-center w-12 h-12 border-[#D8B270] border-2 rounded-full">
+                      <p className="regular-14 text-white font-bold">40% </p>
+                    </div>
+                    <span className="regular-16 pl-2 text-white">
+                      - Alcohol by volume
+                    </span>
                   </div>
-                  <span className="regular-16 pl-2 text-white">
-                    - Alcohol by volume
-                  </span>
-                </div>
-                {/* 2nd */}
-                <div className="flex items-center w-full">
-                  <div className="flex justify-center items-center w-12 h-12 border-[#D8B270] border-2 rounded-full">
-                    <p className="regular-14 text-white font-bold">100% </p>
+                  {/* 2nd */}
+                  <div className="flex items-center w-full">
+                    <div className="flex justify-center items-center w-12 h-12 border-[#D8B270] border-2 rounded-full">
+                      <p className="regular-14 text-white font-bold">100% </p>
+                    </div>
+                    <span className="regular-16 pl-2 text-white">
+                      - Made in France
+                    </span>
                   </div>
-                  <span className="regular-16 pl-2 text-white">
-                    - Made in France
-                  </span>
                 </div>
               </div>
             </div>

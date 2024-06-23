@@ -5,7 +5,7 @@ const LoyalbanditIntro = () => {
   return (
     <section className="bg-[#003376]">
       <div className="padding-component text-white flex flex-col">
-        <h1 className="bold-64 text-center">
+        <h1 className="md:bold-64 bold-40 text-center">
           LOYAL BANDIT SINGLE MALT WHISKEY
         </h1>
         <div className="flexCenter">

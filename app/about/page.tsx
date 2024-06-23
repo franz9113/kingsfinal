@@ -7,7 +7,7 @@ const AboutPage = () => {
   return (
     <>
       <About />
-      {/* <AboutPortfolio /> */}
+      <AboutPortfolio />
       <AboutMission />
       <AboutVision />
     </>

@@ -1,42 +1,46 @@
 "use client";
-import React, { useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore from 'swiper';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
+import Image from "next/image";
 
-interface SwiperImageProps {
-  images: string[];
-}
+import portfolio_1 from "@/public/assets/images/about/portfolio_1.png";
+import portfolio_2 from "@/public/assets/images/about/portfolio_2.png";
+import portfolio_3 from "@/public/assets/images/about/portfolio_3.png";
+import portfolio_4 from "@/public/assets/images/about/portfolio_4.png";
 
-const SwiperImage: React.FC<SwiperImageProps> = ({ images }) => {
-  const [swiper, setSwiper] = useState<SwiperCore | null>(null);
-
-  const handleSlideChange = (swiper: SwiperCore) => {
-    console.log('Slide index changed to', swiper.activeIndex);
-  };
+const SwiperComponent = () => {
 
   return (
+    <section className="padding-component">
     <Swiper
-      spaceBetween={50}
       slidesPerView={1}
-      navigation
-      pagination={{ clickable: true }}
-      autoplay={{
-        delay: 3000,
-        disableOnInteraction: false,
+      pagination={{
+        clickable: true,
       }}
-      onSwiper={(s) => setSwiper(s)}
-      onSlideChange={handleSlideChange}
+      modules={[Pagination]}
+      breakpoints={{
+        768: {
+          slidesPerView: 3,
+        },
+      }}
     >
-      {images.map((image, index) => (
-        <SwiperSlide key={index}>
-          <img src={image} alt={`Slide ${index}`} />
-        </SwiperSlide>
-      ))}
+      <SwiperSlide>
+        <Image src={portfolio_1} alt="1" className="m-auto"/>
+      </SwiperSlide>
+      <SwiperSlide>
+        <Image src={portfolio_2} alt="2" className="m-auto"/>
+      </SwiperSlide>
+      <SwiperSlide>
+        <Image src={portfolio_3} alt="3" className="m-auto"/>
+      </SwiperSlide>
+      <SwiperSlide>
+        <Image src={portfolio_4} alt="4" className="m-auto"/>
+      </SwiperSlide>
     </Swiper>
+  </section>
   );
 };
 
-export default SwiperImage;
+export default SwiperComponent;

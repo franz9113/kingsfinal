@@ -62,8 +62,6 @@ const Footer = () => {
           <div className="flex flex-col">
             <h3 className="text-center bold-20 mb-4 uppercase">Products</h3>
             {!isHomePage && <NewsletterInput />}
-            {/* textfield */}
-            {/* textfield end */}
           </div>
 
           {/* Right Column */}
