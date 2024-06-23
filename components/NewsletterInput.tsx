@@ -1,5 +1,6 @@
 "use client";
 import { ArrowLongRightIcon } from "@heroicons/react/20/solid";
+import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 
 const NewsletterInput = () => {
@@ -13,7 +14,7 @@ const NewsletterInput = () => {
           <input
             type="email"
             placeholder="Your mail"
-            className="bg-transparent border-none outline-none sm:max-w-36 mr-2"
+            className="bg-transparent border-none outline-none sm:max-w-36 mr-2 text-white"
             disabled={isSubmitting}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -21,7 +22,7 @@ const NewsletterInput = () => {
         </span>
         <button
           type="submit"
-          className="flex items-center"
+          className="flex items-center text-white"
           disabled={isSubmitting}
         >
           {isSubmitting ? (

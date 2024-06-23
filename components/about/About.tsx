@@ -6,7 +6,7 @@ const About = () => {
     <section className="bg-black padding-component text-white">
       <h2 className="lg:bold-64 bold-40 uppercase pt-12">who we are</h2>
       <div className="grid md:grid-cols-2 grid-cols-1 pt-4 gap-8">
-        <div>
+        <div className="">
           <Image src={aboutIMG} alt="" />
         </div>
         <div className="my-auto">
