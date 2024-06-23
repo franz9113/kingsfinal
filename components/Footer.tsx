@@ -7,6 +7,7 @@ import Icons from "./Icons";
 import { usePathname } from "next/navigation";
 import { ArrowLongRightIcon, ArrowRightIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
+import Links from "./Links";
 
 const Footer = () => {
   const pathname = usePathname();
@@ -41,17 +42,17 @@ const Footer = () => {
 
           <div className="">
             <Image src={logo} alt="" className="pb-4" />
-            <p className="regular-16">
+            <p className="regular-16 pb-2">
               Welcome to Abdawn Limited We are a new force in the world of
               premium spirits, driven by a passion for craftsmanship and a
               commitment to delivering exceptional experiences.
             </p>
-            <div>
+            <div className="flex items-center justify-between">
               <p
                 className="bold-20 underline"
                 style={{ textDecorationColor: "#BD9B35" }}
               >
-                <Link href="/contact" className="flex items-center">
+                <Link href="/contact" className="flex">
                   Contact us <ArrowLongRightIcon className="ml-2 w-6 h-6" />
                 </Link>
               </p>
@@ -60,7 +61,8 @@ const Footer = () => {
 
           {/* Middle Column */}
           <div className="flex flex-col">
-            <h3 className="text-center bold-20 mb-4 uppercase">Products</h3>
+            <h3 className="text-center bold-20 mb-2 uppercase">Products</h3>
+            <Links />
             {!isHomePage && <NewsletterInput />}
           </div>
 

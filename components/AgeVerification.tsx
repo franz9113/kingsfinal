@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
+import logo from "@/public/assets/images/logo.png"
 
 const AgeVerification = () => {
   const [birthYear, setBirthYear] = useState('');

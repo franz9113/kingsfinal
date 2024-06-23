@@ -32,7 +32,7 @@ const LoyalbanditSmoothness = () => {
           </div>
         </div>
         <div className="grid md:grid-cols-2 grid-cols-1 gap-8">
-          <div className="m-auto">
+          <div className="flex items-end">
             <Image src={lbSmoothness} alt="" />
           </div>
           <div className="flex flex-col m-auto">

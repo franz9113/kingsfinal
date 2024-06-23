@@ -6,9 +6,9 @@ import Link from "next/link";
 
 const HomeIntro = () => {
   return (
-    <section className="bg-black text-white">
-      <div className="padding-component max-container">
-        <p className="regular-16 max-w-2xl">
+    <section className="bg-black text-white padding-component">
+      {/* <div className="padding-component max-container"> */}
+        <p className="regular-16 max-w-3xl">
           Welcome to Abdawn Limited. We are a new force in the world of premium
           spirits, driven by a passion for craftsmanship and a commitment to
           delivering exceptional experiences. Although we are a startup, our
@@ -23,7 +23,7 @@ const HomeIntro = () => {
           variant="btn_transparent mt-4"
           href="/about"
         />
-      </div>
+      {/* </div> */}
     </section>
   );
 };

@@ -11,7 +11,7 @@ const HomeBrands = () => {
           <Image src={extraOrdinary2} alt="" />
         </div>
         <h2 className="bold-32">EXTRAORDINARY BRANDS IN EXPERT HANDS</h2>
-        <p className="regular-16 max-w-2xl">
+        <p className="regular-16 max-w-3xl">
           Abdawn Limited. expertly curates extraordinary spirit brands,
           providing partners and patrons access to superior, locally-loved and
           internationally-recognized drinks.
