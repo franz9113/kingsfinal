@@ -10,22 +10,22 @@ import {
   XMarkIcon,
 } from "@heroicons/react/20/solid";
 
-// import logo from "@/public/assets/images/logo.png"
-
 const Navbar = () => {
   const [activeLink, setActiveLink] = useState<string | null>("/");
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isDropdownOpen, setIsDropdownOpen] = useState<{ [key: string]: boolean }>({});
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   const handleLinkClick = (href: string) => {
     setActiveLink(href);
+    setIsMobileMenuOpen(false);
   };
 
-  const toggleDropdown = (key: string | null) => {
-    setActiveDropdown(key);
-    setIsDropdownOpen(!isDropdownOpen);
+  const toggleDropdown = (key: string) => {
+    setIsDropdownOpen((prevState) => ({
+      ...prevState,
+      [key]: !prevState[key],
+    }));
   };
 
   const toggleMobileMenu = () => {
@@ -41,9 +41,19 @@ const Navbar = () => {
       }
     };
 
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setIsMobileMenuOpen(false);
+        setIsDropdownOpen({});
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -53,7 +63,7 @@ const Navbar = () => {
         isScrolled ? "navbar scrolled text-gray-600" : "navbar text-gray-400"
       }`}
     >
-      <Link href="/">
+     <Link href="/">
         <Image
           src="/assets/images/logo.png"
           alt="logo"
@@ -67,11 +77,9 @@ const Navbar = () => {
         {NAV_LINKS.map((link) => (
           <li
             key={link.key}
-            className={`relative ${
-              activeDropdown === link.key ? "dropdown-active" : ""
+            className={`relative group ${
+              isDropdownOpen[link.key] ? "dropdown-active" : ""
             }`}
-            onMouseEnter={() => toggleDropdown(link.key)}
-            onMouseLeave={() => toggleDropdown(null)}
           >
             <Link
               href={link.href}
@@ -84,50 +92,41 @@ const Navbar = () => {
               {link.dropdown && (
                 <ChevronDownIcon
                   className={`h-6 w-6 text-gray-400 transition-transform ${
-                    isDropdownOpen && activeDropdown === link.key
-                      ? "rotate-180"
-                      : ""
+                    isDropdownOpen[link.key] ? "rotate-180" : ""
                   }`}
                 />
               )}
             </Link>
             {link.dropdown && (
-              <ul
-                className={`absolute top-full left-0 bg-white shadow-md rounded-md py-2 px-4 w-48 z-50 ${
-                  isDropdownOpen && activeDropdown === link.key
-                    ? "block"
-                    : "hidden"
+              <div
+                className={`absolute top-full left-0 bg-white shadow-md rounded-md py-2 px-4 w-48 z-50 group-hover:block ${
+                  isDropdownOpen[link.key] ? "block" : "hidden"
                 }`}
               >
-                {link.dropdown.map((dropdownLink) => (
-                  <li key={dropdownLink.key}>
-                    <Link
-                      href={dropdownLink.href}
-                      className="block regular-16 text-gray-700 py-2 hover:font-bold"
-                    >
-                      {dropdownLink.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+                <ul>
+                  {link.dropdown.map((dropdownLink) => (
+                    <li key={dropdownLink.key}>
+                      <Link
+                        href={dropdownLink.href}
+                        className="block regular-16 text-gray-700 py-2 hover:font-bold"
+                        onClick={() => handleLinkClick(dropdownLink.href)}
+                      >
+                        {dropdownLink.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             )}
           </li>
         ))}
       </ul>
 
-      {/* <div className="lg:flexCenter hidden">
-        <Button
-          type="button"
-          title="Login"
-          icon="/user.svg"
-          variant="btn_dark_green"
-        />
-      </div> */}
-
       <Bars3Icon
         className="inline-block cursor-pointer h-8 w-8 lg:hidden"
         onClick={toggleMobileMenu}
       />
+
       {/* Mobile Screen */}
       {isMobileMenuOpen && (
         <div className="fixed top-0 left-0 w-full h-full bg-white z-40 p-6">
@@ -143,7 +142,10 @@ const Navbar = () => {
             </Link>
             <XMarkIcon
               className="cursor-pointer h-8 w-8 text-black"
-              onClick={toggleMobileMenu}
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                setIsDropdownOpen({});
+              }}
             />
           </div>
           <ul className="space-y-4">
@@ -151,23 +153,21 @@ const Navbar = () => {
               <li key={link.key}>
                 <div
                   className={`flexBetween cursor-pointer pb-1.5 transition-all hover:font-bold ${
-                    activeDropdown === link.key ? "dropdown-active" : ""
+                    isDropdownOpen[link.key] ? "dropdown-active" : ""
                   }`}
                   onClick={() => toggleDropdown(link.key)}
                 >
                   <Link
                     href={link.href}
                     className="regular-16 text-gray-700 flexCenter"
-                    onClick={toggleMobileMenu}
+                    onClick={() => handleLinkClick(link.href)}
                   >
                     {link.label}
                   </Link>
                   {link.dropdown && (
                     <span
                       className={`transition-transform ${
-                        isDropdownOpen && activeDropdown === link.key
-                          ? "rotate-180"
-                          : ""
+                        isDropdownOpen[link.key] ? "rotate-180" : ""
                       }`}
                     >
                       <ChevronDownIcon className="h-6 w-6 text-black" />
@@ -177,9 +177,7 @@ const Navbar = () => {
                 {link.dropdown && (
                   <ul
                     className={`pl-4 space-y-2 ${
-                      isDropdownOpen && activeDropdown === link.key
-                        ? "block"
-                        : "hidden"
+                      isDropdownOpen[link.key] ? "block" : "hidden"
                     }`}
                   >
                     {link.dropdown.map((dropdownLink) => (
@@ -187,7 +185,7 @@ const Navbar = () => {
                         <Link
                           href={dropdownLink.href}
                           className="block regular-16 text-gray-700 py-2 hover:font-bold"
-                          onClick={toggleMobileMenu}
+                          onClick={() => handleLinkClick(dropdownLink.href)}
                         >
                           {dropdownLink.label}
                         </Link>

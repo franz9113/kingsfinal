@@ -11,9 +11,9 @@ const LimvodkaIngredients = () => {
             controls={false}
             loop={true}
             muted={true}
-            // height={400}
-            // width={300}
-            className="px-8"
+            height={400}
+            width={300}
+            className=""
           />
         </div>
         <div className="my-auto md:pb-0 pb-8">

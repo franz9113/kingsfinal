@@ -1,5 +1,25 @@
 .circle_container {
-    width: 200px;
+  height: 350px;
+  width: 350px;
+}
+
+@media (max-width: 767px) {
+  .circle_container {
     height: 200px;
-    margin: auto;
+    width: 200px;
   }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .circle_container {
+    height: 250px;
+    width: 250px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .circle_container {
+    height: 300px;
+    width: 300px;
+  }
+}

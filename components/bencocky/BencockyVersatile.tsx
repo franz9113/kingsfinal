@@ -10,24 +10,24 @@ const BencockyVersatile = () => {
   return (
     <section className="bg-[#FFD252] padding-component">
       {/* <div className=""> */}
-        <div className="grid md:grid-cols-3 grid-cols-1 lg:gap-8 gap-6 mb-20">
+        <div className="grid lg:grid-cols-3 grid-cols-1 lg:gap-8 gap-6 mb-20">
           {/* 1st */}
           <div className="">
-            <Image src={First} alt="" className={styles.circle_container} />
+            <Image src={First} alt="" className={`m-auto ${styles.circle_container}`} />
             <p className="regular-16 text-center pt-4">
               Fruity aromas of banana with citrus notes
             </p>
           </div>
           {/* 2nd */}
           <div className="">
-            <Image src={Second} alt="" className={styles.circle_container} />
+            <Image src={Second} alt="" className={`m-auto ${styles.circle_container}`}  />
             <p className="regular-16 text-center pt-4">
               Slightly spicy on the palate
             </p>
           </div>
           {/* 3rd */}
           <div className="">
-            <Image src={Third} alt="" className={styles.circle_container} />
+            <Image src={Third} alt="" className={`m-auto ${styles.circle_container}`}  />
             <p className="regular-16 text-center pt-4">Velvety finish</p>
           </div>
         </div>

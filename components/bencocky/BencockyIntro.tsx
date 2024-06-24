@@ -3,11 +3,11 @@ import Image from "next/image";
 
 const BencockyIntro = () => {
   return (
-    <section className="bg-black padding-x-component">
+    <section className="bg-black padding-component">
       {/* <div className=" max-container"> */}
       <div className="grid lg:grid-cols-3 grid-cols-1 gap-8">
-        <div className="pt-8">
-          <h2 className="bold-32 text-[#FFD252]">
+        <div className="">
+          <h2 className="md:bold-64 bold-32 text-[#FFD252]">
             BEN COCKY BLENDED SCOTCH WHISKEY
           </h2>
         </div>
@@ -18,12 +18,12 @@ const BencockyIntro = () => {
             controls={false}
             loop={true}
             muted={true}
-            // height={400}
-            // width={300}
+            height={400}
+            width={300}
             className="pr-4"
           />
         </div>
-        <div className="flex flex-col justify-end pl-4 pb-8">
+        <div className="flex flex-col justify-end pl-4 md:pb-0 pb-8">
           <ul className="text-[#FFD252]">
             <Image src={timeTocelebrate} alt="" />
 

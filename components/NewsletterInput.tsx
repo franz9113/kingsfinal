@@ -9,7 +9,7 @@ const NewsletterInput = () => {
 
   return (
     <div>
-      <span className="text-white font-bold">
+      <span className="flex justify-center text-white font-bold">
         <button className="flex items-center justify-between px-2 md:px-4 py-1 md:py-2 bg-transparent border border-[#d8b476] rounded-md">
           <span className="flex items-center">
             <input

@@ -5,7 +5,7 @@ import NewsletterInput from "./NewsletterInput";
 import Icons from "./Icons";
 
 import { usePathname } from "next/navigation";
-import { ArrowLongRightIcon, ArrowRightIcon } from "@heroicons/react/20/solid";
+import { ArrowLongRightIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import Links from "./Links";
 
@@ -30,13 +30,13 @@ const Footer = () => {
       textColor = "white";
   }
   return (
-    <footer
+    <footer className="padding-component"
       style={{
         backgroundColor,
         color: textColor,
       }}
     >
-      <div className="padding-component max-container">
+      <div className="max-container">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8 pb-14">
           {/* Left Column */}
 

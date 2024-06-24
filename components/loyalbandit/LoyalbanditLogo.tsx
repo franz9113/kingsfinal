@@ -12,8 +12,8 @@ const LoyalbanditLogo = () => {
             controls={false}
             loop={true}
             muted={true}
-            // height={400}
-            // width={300}
+            height={400}
+            width={300}
             className="px-8"
           />
         </div>
