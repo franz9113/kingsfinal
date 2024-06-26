@@ -2,8 +2,8 @@ import React from "react";
 
 const BencockyIngredients = () => {
   return (
-    <section className="bg-black padding-x-component">
-      {/* <div className=" max-container"> */}
+    <section className="bg-black">
+      <div className="padding-x-component max-container">
         <div className="grid md:grid-cols-2 grid-cols-1 gap-8 md:pb-0 pb-8">
           <div className="md:order-1 order-2 flex flex-col my-auto">
             <h2 className="bold-32 text-[#FFD252]">
@@ -31,7 +31,7 @@ const BencockyIngredients = () => {
           />
         </div>
         </div>
-      {/* </div> */}
+      </div>
     </section>
   );
 };

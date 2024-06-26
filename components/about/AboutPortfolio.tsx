@@ -8,7 +8,7 @@ const AboutPortfolio = () => {
         <SwiperComponent />
       </div>
       <div className="bg-black">
-        <div className="padding-component flex flex-col">
+        <div className="padding-component max-container flex flex-col">
           <h2 className="bold-32-w">Crafting Exceptional Brands</h2>
           <p className="regular-16-w max-w-3xl">
             At the heart of Abdawn Limited lies a relentless pursuit of

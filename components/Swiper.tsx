@@ -13,7 +13,7 @@ import portfolio_4 from "@/public/assets/images/about/portfolio_4.png";
 const SwiperComponent = () => {
 
   return (
-    <section className="padding-component">
+    <section className="padding-component max-container">
     <Swiper
       slidesPerView={1}
       pagination={{

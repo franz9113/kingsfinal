@@ -49,7 +49,7 @@ const Icons = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaInstagram className="w-full h-full" />
+                <FaInstagram className="w-full h-full " />
               </Link>
             </div>
           </div>
@@ -66,7 +66,7 @@ const Icons = () => {
                 <Image
                   src={benCockyIcon}
                   alt="Image Icon"
-                  className="w-full h-full"
+                  className="w-full h-full rounded-md"
                 />
               </Link>
             </div>
@@ -79,7 +79,7 @@ const Icons = () => {
                 <Image
                   src={loyalBanditIcon}
                   alt="Image Icon"
-                  className="w-full h-full"
+                  className="w-full h-full rounded-md"
                 />
               </Link>
             </div>
@@ -93,7 +93,7 @@ const Icons = () => {
                 <Image
                   src={limVodkaIcon}
                   alt="Image Icon"
-                  className="w-full h-full"
+                  className="w-full h-full rounded-md"
                 />
               </Link>
             </div>

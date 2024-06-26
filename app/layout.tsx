@@ -1,4 +1,3 @@
-
 import type { Metadata } from "next";
 
 import "./globals.css";
@@ -21,8 +20,8 @@ export default function RootLayout({
     <html lang="en">
       <link rel="icon" href="../assets/icons/logo.ico" />
       <body>
-        {/* <AgeVerification /> */}
         <Navbar />
+        <AgeVerification />
         <main className="relative overflow-hidden">{children}</main>
         <Footer />
         <ScrollToTop />

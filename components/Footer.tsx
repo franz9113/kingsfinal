@@ -30,13 +30,13 @@ const Footer = () => {
       textColor = "white";
   }
   return (
-    <footer className="padding-component"
+    <footer
       style={{
         backgroundColor,
         color: textColor,
       }}
     >
-      <div className="max-container">
+      <div className="padding-component max-container">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8 pb-14">
           {/* Left Column */}
 

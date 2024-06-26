@@ -3,8 +3,8 @@ import Image from "next/image";
 
 const BencockyIntro = () => {
   return (
-    <section className="bg-black padding-component">
-      {/* <div className=" max-container"> */}
+    <section className="bg-black ">
+      <div className="padding-component max-container">
       <div className="grid lg:grid-cols-3 grid-cols-1 gap-8">
         <div className="">
           <h2 className="md:bold-64 bold-32 text-[#FFD252]">
@@ -41,7 +41,7 @@ const BencockyIntro = () => {
           </ul>
         </div>
       </div>
-      {/* </div> */}
+      </div>
     </section>
   );
 };

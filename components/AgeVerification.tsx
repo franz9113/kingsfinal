@@ -1,13 +1,43 @@
 "use client";
-import React, { useState, useEffect } from 'react';
-import logo from "@/public/assets/images/logo.png"
+import React, { useState, useEffect, useRef } from "react";
+import logo from "@/public/assets/images/logo.png";
+import Image from "next/image";
 
-const AgeVerification = () => {
-  const [birthYear, setBirthYear] = useState('');
-  const [showModal, setShowModal] = useState(true);
+const AgeVerification: React.FC = () => {
+  const [birthYear, setBirthYear] = useState<string>("");
+  const [showModal, setShowModal] = useState<boolean>(true);
+  const [errorMessage, setErrorMessage] = useState<string>("");
+  const [isSubmitDisabled, setIsSubmitDisabled] = useState<boolean>(true);
+  const [rememberDevice, setRememberDevice] = useState<boolean>(false);
+  const modalRef = useRef<HTMLDivElement>(null);
 
   const handleBirthYearChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
     setBirthYear(e.target.value);
+    setErrorMessage("");
+
+    const currentYear = new Date().getFullYear();
+    const age = currentYear - parseInt(value);
+
+    if (value.length === 4) {
+      const currentYear = new Date().getFullYear();
+      const age = currentYear - parseInt(value);
+
+      if (age >= 120) {
+        setErrorMessage("Sorry, please enter a valid date (YYYY)");
+        setIsSubmitDisabled(true);
+      } else {
+        setIsSubmitDisabled(false);
+      }
+    } else {
+      setIsSubmitDisabled(true);
+    }
+  };
+
+  const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (!/[0-9]/.test(event.key)) {
+      event.preventDefault();
+    }
   };
 
   const handleSubmit = () => {
@@ -17,48 +47,83 @@ const AgeVerification = () => {
     if (age >= 18) {
       setShowModal(false);
     } else {
-      alert('You must be 18 years old or above to access this content.');
+      setErrorMessage(
+        "Sorry, your age does not permit you to enter at this time"
+      );
     }
   };
 
+  const handleRememberDevice = () => {
+    setRememberDevice(!rememberDevice);
+  };
+
   useEffect(() => {
-    const handleDocumentClick = (e: MouseEvent) => {
-      if (showModal) {
-        e.preventDefault();
-        e.stopPropagation();
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        modalRef.current &&
+        event.target instanceof HTMLElement &&
+        !modalRef.current.contains(event.target)
+      ) {
+        event.preventDefault();
+        event.stopPropagation();
       }
     };
 
-    document.addEventListener('click', handleDocumentClick);
+    if (showModal) {
+      document.addEventListener("click", handleClickOutside);
+    } else {
+      document.removeEventListener("click", handleClickOutside);
+    }
 
     return () => {
-      document.removeEventListener('click', handleDocumentClick);
+      document.removeEventListener("click", handleClickOutside);
     };
   }, [showModal]);
 
   return (
     <>
       {showModal && (
-        <div className="modal fixed z-50 inset-0 overflow-y-auto">
+        <div className="modal inset-0 overflow-y-auto">
           <div className="flex items-center justify-center min-h-screen">
-            <div className="bg-white rounded-lg shadow-lg p-8 w-full max-w-md">
-              <h2 className="text-2xl font-bold mb-4">Age Verification</h2>
-              <p className="mb-4">
-                Please enter your birth year to verify that you are 18 years old or above.
-              </p>
+            <div
+              className="bg-white rounded-lg shadow-lg p-8 w-full max-w-md"
+              ref={modalRef}
+            >
+              <Image src={logo} alt="" priority />
+              <h4 className="regular-14 font-bold mb-2">Year</h4>
               <input
-                type="number"
+                type="text"
                 placeholder="YYYY"
+                maxLength={4}
                 value={birthYear}
                 onChange={handleBirthYearChange}
+                onKeyPress={handleKeyPress}
                 className="remove-arrow text-center border rounded-md px-4 py-2 w-full mb-4 appearance-none"
               />
-              <button
-                onClick={handleSubmit}
-                className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md"
-              >
-                Submit
-              </button>
+              {errorMessage && (
+                <p className="text-red-500 mb-4">{errorMessage}</p>
+              )}
+              <div className="flex justify-center">
+                <button
+                  onClick={handleSubmit}
+                  disabled={isSubmitDisabled}
+                  className={`bg-white border border-black text-black font-bold py-2 px-4 rounded-md ${
+                    isSubmitDisabled ? "opacity-50 cursor-not-allowed" : ""
+                  }`}
+                >
+                  ENTER
+                </button>
+              </div>
+              {/* <div className="flex items-center my-4">
+                <input
+                  type="checkbox"
+                  checked={rememberDevice}
+                  onChange={handleRememberDevice}
+                  className="mr-2"
+                />
+                <label className="regular-14">Remember me on this device</label>
+              </div> */}
+              <p className="regular-14 text-center mt-4">Please confirm your age</p>
             </div>
           </div>
         </div>

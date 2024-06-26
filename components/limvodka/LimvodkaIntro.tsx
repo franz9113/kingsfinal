@@ -8,7 +8,7 @@ const LimvodkaIntro = () => {
   return (
     <section className="bg-[#EDD6C0] py-12">
       <div className="grid md:grid-cols-2 grid-cols-1 gap-y-8">
-        <div className="padding-l-component flex flex-col md:order-1 order-2 my-auto md:pr-6 md:pb-0 pb-8">
+        <div className="max-w-6xl ml-auto padding-l-component flex flex-col md:order-1 order-2 my-auto md:pr-6 md:pb-0 pb-8">
           <h2 className="bold-32 md:text-right">LESS IS MORE</h2>
           <p className="regular-16 md:text-right">
             Lim stands for ‘Less Is More”. Committed to the new art of living,
@@ -27,7 +27,7 @@ const LimvodkaIntro = () => {
         <div className="">
           <Image src={limvodka_img2} alt="" className="w-full h-full" />
         </div>
-        <div className="padding-r-component flex flex-col my-auto md:pl-6">
+        <div className="padding-r-component flex flex-col my-auto md:pl-6 max-w-5xl">
           <h2 className="bold-32 uppercase"> made in france</h2>
           <p className="lg:regular-16 regular-14">
             Distilled in Cognac and made from 100% French winter wheat , our

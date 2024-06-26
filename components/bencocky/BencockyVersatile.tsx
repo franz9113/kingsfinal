@@ -8,8 +8,8 @@ import styles from "./Bencocky.module.css";
 
 const BencockyVersatile = () => {
   return (
-    <section className="bg-[#FFD252] padding-component">
-      {/* <div className=""> */}
+    <section className="bg-[#FFD252] ">
+      <div className="padding-component max-container">
         <div className="grid lg:grid-cols-3 grid-cols-1 lg:gap-8 gap-6 mb-20">
           {/* 1st */}
           <div className="">
@@ -42,11 +42,11 @@ const BencockyVersatile = () => {
               balanced long drink.
             </p>
           </div>
-          <div className="md:order-2 order-1">
+          <div className="md:order-2 order-1 m-auto">
             <Image src={bencockyIngredients} alt="" />
           </div>
         </div>
-      {/* </div> */}
+      </div>
     </section>
   );
 };

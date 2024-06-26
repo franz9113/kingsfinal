@@ -21,7 +21,7 @@ const EmblaCarousel: React.FC = () => {
           <div className="embla__slide__inner">
             {/* 1st slide */}
             <div className="grid lg:grid-cols-3 grid-cols-1 gap-8">
-              <div className="lg:order-1 order-3 flex flex-col">
+              <div className="lg:order-1 order-3 flex flex-col m-auto">
                 <h2 className="bold-32 uppercase text-white">ben cocky</h2>
                 <p className="regular-16 text-white">
                   Blending the bold flavors of French brandy with the tropical
@@ -73,7 +73,7 @@ const EmblaCarousel: React.FC = () => {
         <div key="slide2" className="embla__slide">
           <div className="embla__slide__inner">
             <div className="grid lg:grid-cols-3 grid-cols-1 gap-8">
-              <div className="lg:order-1 order-3 flex flex-col">
+              <div className="lg:order-1 order-3 flex flex-col m-auto">
                 <h2 className="bold-32 uppercase text-white">lim vodka</h2>
                 <p className="regular-16 text-white">
                   Crafted in the heart of France, Lim Vodka is a testament to
@@ -127,7 +127,7 @@ const EmblaCarousel: React.FC = () => {
           <div className="embla__slide__inner">
             <div className="grid lg:grid-cols-3 grid-cols-1 gap-8">
               {/* 1st grid */}
-              <div className="lg:order-1 order-3 flex flex-col">
+              <div className="lg:order-1 order-3 flex flex-col m-auto">
                 <h2 className="bold-32 uppercase text-white">loyal bandit</h2>
                 <p className="regular-16 text-white">
                   Loyal Bandit is a small-batch bourbon whiskey that embodies

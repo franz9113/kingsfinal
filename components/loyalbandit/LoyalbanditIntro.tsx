@@ -4,7 +4,7 @@ import Image from "next/image";
 const LoyalbanditIntro = () => {
   return (
     <section className="bg-[#003376]">
-      <div className="padding-component text-white flex flex-col">
+      <div className="padding-component max-container text-white flex flex-col">
         <h1 className="md:bold-64 bold-40 text-center">
           LOYAL BANDIT SINGLE MALT WHISKEY
         </h1>
