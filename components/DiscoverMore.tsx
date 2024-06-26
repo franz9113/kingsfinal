@@ -65,7 +65,7 @@ const DiscoverMore = () => {
         <div className="grid md:grid-cols-2 grid-cols-1 gap-8 mt-12">
           <div className="flex flex-col">
             <div className="bottle-container">
-              {image1 && <img src={image1.src} alt="Bottle 1" />}
+              {image1 && <Image src={image1} alt="Bottle 1" />}
             </div>
             <p className="bold-32 text-center mt-2 uppercase">
               <Link href={link2}>{text1}</Link>
@@ -73,7 +73,7 @@ const DiscoverMore = () => {
           </div>
           <div className="flex flex-col">
             <div className="bottle-container">
-              {image2 && <img src={image2.src} alt="Bottle 2" />}
+              {image2 && <Image src={image2} alt="Bottle 2" />}
             </div>
 
             <p className="bold-32 text-center mt-2 uppercase">

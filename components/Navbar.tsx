@@ -85,7 +85,7 @@ const Navbar = () => {
               href={link.href}
               className={`regular-16 flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold ${
                 isScrolled ? "text-gray-600" : "text-gray-400"
-              } ${link.href === activeLink ? "active-link" : ""}`}
+              }`}
               onClick={() => handleLinkClick(link.href)}
             >
               {link.label}

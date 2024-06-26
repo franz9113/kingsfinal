@@ -6,6 +6,8 @@ import bencockyIngredients from "@/public/assets/images/bencocky/ben_cocky_ingre
 import Image from "next/image";
 import styles from "./Bencocky.module.css";
 
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+
 const BencockyVersatile = () => {
   return (
     <section className="bg-[#FFD252] ">
