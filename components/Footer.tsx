@@ -19,7 +19,7 @@ const Footer = () => {
   switch (pathname) {
     case "/about":
     case "/contact":
-      backgroundColor = "#BD9B35";
+      backgroundColor = "#FFD58B";
       textColor = "black";
       break;
     case "/product/limvodka":

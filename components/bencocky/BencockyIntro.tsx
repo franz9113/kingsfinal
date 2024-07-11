@@ -23,7 +23,7 @@ const BencockyIntro = () => {
             className="pr-4"
           />
         </div>
-        <div className="flex flex-col justify-end pl-4 md:pb-0 pb-8">
+        <div className="flex flex-col justify-end md:pl-4 md:pb-0 pb-8">
           <ul className="text-[#FFD252]">
             <Image src={timeTocelebrate} alt="" />
 

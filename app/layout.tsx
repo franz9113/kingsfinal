@@ -21,7 +21,7 @@ export default function RootLayout({
       <link rel="icon" href="../assets/icons/logo.ico" />
       <body>
         <Navbar />
-        <AgeVerification />
+        {/* <AgeVerification /> */}
         <main className="relative overflow-hidden">{children}</main>
         <Footer />
         <ScrollToTop />
