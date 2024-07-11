@@ -4,8 +4,8 @@ import Link from "next/link";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 
 import benCockyIcon from "@/public/assets/images/bencocky/bencocky_icon_bg.png";
-import loyalBanditIcon from "@/public/assets/images/limvodka/limvodka_icon_bg.jpg";
-import limVodkaIcon from "@/public/assets/images/loyalbandit/loyalbandit_icon_bg.png";
+import loyalBanditIcon from "@/public/assets/images/loyalbandit/loyalbandit_icon_bg.png";
+import limVodkaIcon from "@/public/assets/images/limvodka/limvodka_icon_bg.png";
 
 import { usePathname } from "next/navigation";
 
